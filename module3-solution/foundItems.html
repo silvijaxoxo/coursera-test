@@ -1,0 +1,8 @@
+<h3 ng-if="list.found && list.found.length">Found Items</h3>
+<ul>
+  <li ng-repeat="item in list.found">
+    {{ item.name }} ({{ item.short_name }}) - {{ item.description }}
+    <button ng-click="list.onRemove({index: $index});">Don't want this one!</button>
+  </li>
+</ul>
+<h3 ng-if="list.found && !list.found.length" class="text-danger">Nothing found</h3>
