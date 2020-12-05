@@ -1,0 +1,53 @@
+<div class="container" ng-controller="SignUpController as signUpCtrl">
+  <h1>Sign Up</h1>
+  <fieldset>
+    <form name='signUpForm' novalidate>
+      <input type="text" name="firstname" placeholder="First name"
+          ng-model="signUpCtrl.firstname"
+          required
+          minlength="4">
+          <span
+            ng-if="(signUpForm.firstname.$error.minlength || signUpForm.firstname.$error.required) && signUpForm.firstname.$touched">
+            First name must be at least 4 characters long
+          </span>
+          <br>
+
+      <input type="text" name="lastname" placeholder="Last name"
+          ng-model="signUpCtrl.lastname"
+          required
+          minlength="4">
+          <span
+            ng-if="(signUpForm.lastname.$error.minlength || signUpForm.lastname.$error.required) && signUpForm.lastname.$touched">
+            Last name must be at least 4 characters long
+          </span>
+          <br>
+
+      <input type="email" name="email" placeholder="Email"
+          ng-model="signUpCtrl.email"
+          required>
+          <span ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">
+            Must be a valid email address: handle@domain format
+          </span>
+          <br>
+
+      <input type="text" name="phone" placeholder="Phone ###-###-####"
+          ng-model="signUpCtrl.phone"
+          pattern="(\d{3})-(\d{3})-(\d{4})">
+          <span ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">
+            Phone must be in the format ###-###-####.
+          </span>
+          <br>
+
+      <input type="text" name="menuitem" placeholder="Favourite menu item"
+          ng-model="signUpCtrl.menuitem">
+          <span ng-if="signUpCtrl.menuError">No such menu number exists</span>
+          <br>
+
+      <button
+          ng-disabled="signUpForm.$invalid"
+          ng-click="signUpCtrl.submit()">Submit</button>
+      <span ng-if="signUpCtrl.completed">Your information has been saved</span>
+
+    </form>
+  </fieldset>
+</div>

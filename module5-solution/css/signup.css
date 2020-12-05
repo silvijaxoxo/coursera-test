@@ -1,0 +1,34 @@
+form input {
+  font-size: 24px;
+  margin-bottom: 10px;
+  background-color: #61122f;
+  border: 2px #3F0C1F solid;
+}
+
+form input:hover {
+  box-shadow: 0 1px 5px 1px #cccccc;
+}
+
+form button {
+  font-size: 24px;
+  background-color: #951C49;
+  border: 2px #3F0C1F solid;
+}
+
+form button:invalid {
+  background-color: #3F0C1F;
+}
+
+form button:valid:hover {
+  background-color: #3F0C1F;
+  box-shadow: 0 1px 5px 1px #cccccc;
+  cursor: pointer;
+}
+
+.ng-touched.ng-valid {
+  border: 2px #557c3e solid;
+}
+
+.ng-touched.ng-invalid {
+  border: 2px #f6b319 solid;
+}
